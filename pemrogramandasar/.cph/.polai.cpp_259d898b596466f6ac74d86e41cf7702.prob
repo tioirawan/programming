@@ -1,0 +1,1 @@
+{"name":"Local: polai","url":"/Users/tioirawan/Projects/competitive/pemrogramandasar/polai.cpp","tests":[{"id":1667489179560,"input":"11 3","output":"1 2 * 4 5 * 7 8 * 10 11"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/tioirawan/Projects/competitive/pemrogramandasar/polai.cpp","group":"local","local":true}

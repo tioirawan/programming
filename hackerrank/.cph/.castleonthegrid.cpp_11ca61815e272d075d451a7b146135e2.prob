@@ -1,0 +1,1 @@
+{"name":"Local: castleonthegrid","url":"/Users/tioirawan/Projects/competitive/hackerrank/castleonthegrid.cpp","tests":[{"id":1669274918218,"input":"3\n.X.\n.X.\n...\n0 0 0 2 ","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/tioirawan/Projects/competitive/hackerrank/castleonthegrid.cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: lipatkertas","url":"/Users/tioirawan/Projects/competitive/gemastik2020/lipatkertas.cpp","tests":[{"id":1666861859067,"input":"3\n120 80 3\n3 2 50\n3 7 2","output":"40 30\n0 0\n3 1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/tioirawan/Projects/competitive/gemastik2020/lipatkertas.cpp","group":"local","local":true}

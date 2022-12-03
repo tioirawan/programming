@@ -1,0 +1,1 @@
+{"name":"Local: transpose","url":"/Users/tioirawan/Projects/competitive/pemrogramandasar/transpose.cpp","tests":[{"id":1667486311963,"input":"1 2 3\n4 5 6\n7 8 9","output":"1 4 7\n2 5 8\n3 6 9"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/tioirawan/Projects/competitive/pemrogramandasar/transpose.cpp","group":"local","local":true}

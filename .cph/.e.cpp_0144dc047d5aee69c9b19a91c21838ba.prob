@@ -1,0 +1,1 @@
+{"name":"Local: e","url":"/Users/tioirawan/Projects/competitive/e.cpp","tests":[{"id":1666780836384,"input":"3 5 2 0","output":"5 3 2"},{"id":1666780977119,"input":"3 5 2 1","output":"2 3 5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/tioirawan/Projects/competitive/e.cpp","group":"local","local":true}
