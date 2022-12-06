@@ -10,16 +10,17 @@ void find(string signal) {
   {
     string sub = signal.substr(i, 14);
 
-    unordered_map<char, bool> occ;
+    unordered_map<char, int> occ;
 
     bool hasDups = false;
 
-    for (int i = 0; i < sub.size(); i++)
+    for (int j = 0; j < sub.size(); j++)
     {
-      if(!occ[sub[i]]) {
-        occ[sub[i]] = true;
+      if(occ.find(sub[j]) == occ.end()) {
+        occ[sub[j]] = j;
       } else {
         hasDups = true;
+        i = i  + occ[sub[j]];
         break;
       }
     }
