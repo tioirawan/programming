@@ -50,18 +50,22 @@ int main() {
         pair<int, int>* prev = *(it - 1);
         pair<int, int>* cur = *(it);
 
+        bool isChanged = false;
+
         if (!isAdj(cur->first, cur->second, prev->first, prev->second)) {
           cur->first += clamp(prev->first - cur->first, -1, 1);
           cur->second += clamp(prev->second - cur->second, -1, 1);
+          isChanged = true;
         }
 
-        if (cur == knots.back()) {
-          string key = to_string(cur->first) + "," + to_string(cur->second);
-          if (vis.find(key) == vis.end()) {
-            count++;
-            vis[key] = 1;
-          }
+        // marks back directly, so we can stop whenever we want
+        string key = to_string(knots.back()->first) + "," + to_string(knots.back()->second);
+        if (vis.find(key) == vis.end()) {
+          count++;
+          vis[key] = 1;
         }
+
+        if (!isChanged) break;
       }
 
       cout << endl;
