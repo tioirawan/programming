@@ -7,8 +7,6 @@ typedef long long ll;
 
 using namespace std;
 
-map<string, bool> vis;
-
 bool isAdj(int x1, int y1, int x2, int y2) {
   int dx = abs(x1 - x2);
   int dy = abs(y1 - y2);
@@ -22,9 +20,7 @@ bool isAdj(int x1, int y1, int x2, int y2) {
 int main() {
   FAST;
 
-  int count = 0;
-
-  map<char, pair<int, int>> dirs;
+  unordered_map<char, pair<int, int>> dirs;
   dirs['L'] = {-1, 0};
   dirs['R'] = {1, 0};
   dirs['U'] = {0, 1};
@@ -36,6 +32,10 @@ int main() {
   for (auto& k : knots) {
     k = new pair{0, 0};
   }
+
+  unordered_map<string, bool> vis;
+  // mark initial position as visited, because it won't be marked from the loop
+  vis["0,0"] = 1;
 
   string mv;
   while (getline(cin, mv)) {
@@ -50,29 +50,26 @@ int main() {
         pair<int, int>* prev = *(it - 1);
         pair<int, int>* cur = *(it);
 
-        bool isChanged = false;
+        if (isAdj(cur->first, cur->second, prev->first, prev->second)) break;
 
-        if (!isAdj(cur->first, cur->second, prev->first, prev->second)) {
-          cur->first += clamp(prev->first - cur->first, -1, 1);
-          cur->second += clamp(prev->second - cur->second, -1, 1);
-          isChanged = true;
+        cur->first += clamp(prev->first - cur->first, -1, 1);
+        cur->second += clamp(prev->second - cur->second, -1, 1);
+
+        if (*it == knots.back()) {
+          string key = to_string(knots.back()->first) + "," + to_string(knots.back()->second);
+          if (!vis[key])
+            vis[key] = 1;
         }
-
-        // marks back directly, so we can stop whenever we want
-        string key = to_string(knots.back()->first) + "," + to_string(knots.back()->second);
-        if (vis.find(key) == vis.end()) {
-          count++;
-          vis[key] = 1;
-        }
-
-        if (!isChanged) break;
       }
-
-      cout << endl;
     }
   }
 
-  cout << count << endl;
+  cout << vis.size() << endl;
+
+  // cleanup
+  for (auto& k : knots) {
+    delete k;
+  }
 
   return 0;
 }
