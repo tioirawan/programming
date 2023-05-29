@@ -117,7 +117,7 @@
     "syncstream": "cpp",
     "__availability": "cpp"
   },
-  "workbench.colorTheme": "One Dark Pro Darker",
+  "workbench.colorTheme": "Atom One Dark",
   "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, ColumnLimit: 0}",
   "editor.tabSize": 2
 }
